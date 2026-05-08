@@ -7,7 +7,7 @@ pipeline {
         stage('Checkout Code') {
             steps {
                 git branch: 'main',
-                    url: 'https://github.com/mrehal13/PlaywrightDemo'
+                    url: 'https://github.com/mrehal13/PlaywrightDemo.git'
             }
         }
 
