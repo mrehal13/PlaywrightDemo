@@ -3,7 +3,6 @@ pipeline {
     agent any
 
     stages {
-
         stage('Checkout Code') {
             steps {
                 git branch: 'main',
@@ -43,6 +42,9 @@ pipeline {
         stage('Publish Report') {
             steps {
                 publishHTML([
+                    allowMissing: false,
+                    alwaysLinkToLastBuild: true,
+                    keepAll: true,
                     reportDir: '.',
                     reportFiles: 'report.html',
                     reportName: 'Pytest HTML Report'
